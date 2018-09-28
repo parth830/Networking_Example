@@ -1,0 +1,14 @@
+//
+//  File.swift
+//  Networking_Example
+//
+//  Created by Ayaan Ruhi on 9/28/18.
+//  Copyright © 2018 parth. All rights reserved.
+//
+
+import Foundation
+
+struct schoolDataStruct: Decodable{
+    let school_name: String
+    let city: String
+}

@@ -12,6 +12,8 @@
 		B2BDB9BF215E87270010EEAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BDB9BD215E87270010EEAD /* Main.storyboard */; };
 		B2BDB9C1215E87280010EEAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2BDB9C0215E87280010EEAD /* Assets.xcassets */; };
 		B2BDB9C4215E87280010EEAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BDB9C2215E87280010EEAD /* LaunchScreen.storyboard */; };
+		B2BDB9CC215E88340010EEAD /* SchoolData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BDB9CB215E88330010EEAD /* SchoolData.swift */; };
+		B2BDB9CE215E8B8E0010EEAD /* SchoolDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BDB9CD215E8B8E0010EEAD /* SchoolDataTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		B2BDB9C0215E87280010EEAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2BDB9C3215E87280010EEAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2BDB9C5215E87280010EEAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2BDB9CB215E88330010EEAD /* SchoolData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolData.swift; sourceTree = "<group>"; };
+		B2BDB9CD215E8B8E0010EEAD /* SchoolDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDataTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				B2BDB9B9215E87270010EEAD /* AppDelegate.swift */,
 				B2BDB9BB215E87270010EEAD /* ViewController.swift */,
+				B2BDB9CB215E88330010EEAD /* SchoolData.swift */,
+				B2BDB9CD215E8B8E0010EEAD /* SchoolDataTableViewCell.swift */,
 				B2BDB9BD215E87270010EEAD /* Main.storyboard */,
 				B2BDB9C0215E87280010EEAD /* Assets.xcassets */,
 				B2BDB9C2215E87280010EEAD /* LaunchScreen.storyboard */,
@@ -137,6 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2BDB9BC215E87270010EEAD /* ViewController.swift in Sources */,
+				B2BDB9CE215E8B8E0010EEAD /* SchoolDataTableViewCell.swift in Sources */,
+				B2BDB9CC215E88340010EEAD /* SchoolData.swift in Sources */,
 				B2BDB9BA215E87270010EEAD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
