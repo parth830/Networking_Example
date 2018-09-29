@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var schoolTableView: UITableView!
     
     var schoolDataArray = [schoolDataStruct]()
+    let schoolDataURL: String = "https://data.cityofnewyork.us/resource/97mf-9njv.json"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,27 +21,19 @@ class ViewController: UIViewController {
         getDataFromURL()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func getDataFromURL() {
-        let url = URL(string: "https://data.cityofnewyork.us/resource/97mf-9njv.json")
+        let url = URL(string: schoolDataURL)
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            do{
+            do {
                 if error == nil {
                     self.schoolDataArray = try JSONDecoder().decode([schoolDataStruct].self, from: data!)
-                    for _ in self.schoolDataArray{
                         DispatchQueue.main.async {
                             self.schoolTableView.reloadData()
                         }
-                    }
                 }
-            }catch{
+            }catch {
                 print("Error in getting data from server.")
             }
-            
         }.resume()
     }
 }

@@ -58,16 +58,40 @@
 		B2BDB9B8215E87270010EEAD /* Networking_Example */ = {
 			isa = PBXGroup;
 			children = (
-				B2BDB9B9215E87270010EEAD /* AppDelegate.swift */,
-				B2BDB9BB215E87270010EEAD /* ViewController.swift */,
+				B2BDB9C5215E87280010EEAD /* Info.plist */,
+				B2BDB9D1215F190C0010EEAD /* ViewController */,
+				B2BDB9D0215F18E00010EEAD /* View */,
+				B2BDB9CF215F18B10010EEAD /* Model */,
+			);
+			path = Networking_Example;
+			sourceTree = "<group>";
+		};
+		B2BDB9CF215F18B10010EEAD /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				B2BDB9CB215E88330010EEAD /* SchoolData.swift */,
-				B2BDB9CD215E8B8E0010EEAD /* SchoolDataTableViewCell.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2BDB9D0215F18E00010EEAD /* View */ = {
+			isa = PBXGroup;
+			children = (
 				B2BDB9BD215E87270010EEAD /* Main.storyboard */,
 				B2BDB9C0215E87280010EEAD /* Assets.xcassets */,
 				B2BDB9C2215E87280010EEAD /* LaunchScreen.storyboard */,
-				B2BDB9C5215E87280010EEAD /* Info.plist */,
 			);
-			path = Networking_Example;
+			path = View;
+			sourceTree = "<group>";
+		};
+		B2BDB9D1215F190C0010EEAD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B2BDB9B9215E87270010EEAD /* AppDelegate.swift */,
+				B2BDB9BB215E87270010EEAD /* ViewController.swift */,
+				B2BDB9CD215E8B8E0010EEAD /* SchoolDataTableViewCell.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
