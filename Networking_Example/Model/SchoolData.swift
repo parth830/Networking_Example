@@ -11,4 +11,5 @@ import Foundation
 struct schoolDataStruct: Decodable{
     let school_name: String
     let city: String
+    let dbn: String
 }

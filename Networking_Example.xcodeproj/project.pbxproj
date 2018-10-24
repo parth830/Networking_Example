@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B202438F21798ED5007E8A89 /* SATResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B202438E21798ED5007E8A89 /* SATResultData.swift */; };
+		B2024393217A55C9007E8A89 /* SchoolDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024392217A55C9007E8A89 /* SchoolDetailsViewController.swift */; };
+		B27447B3218042F000FB9E2E /* Networking_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27447B2218042F000FB9E2E /* Networking_ExampleTests.swift */; };
 		B2BDB9BA215E87270010EEAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BDB9B9215E87270010EEAD /* AppDelegate.swift */; };
 		B2BDB9BC215E87270010EEAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BDB9BB215E87270010EEAD /* ViewController.swift */; };
 		B2BDB9BF215E87270010EEAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BDB9BD215E87270010EEAD /* Main.storyboard */; };
@@ -16,7 +19,22 @@
 		B2BDB9CE215E8B8E0010EEAD /* SchoolDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BDB9CD215E8B8E0010EEAD /* SchoolDataTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B27447B5218042F000FB9E2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2BDB9AE215E87270010EEAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2BDB9B5215E87270010EEAD;
+			remoteInfo = Networking_Example;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		B202438E21798ED5007E8A89 /* SATResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATResultData.swift; sourceTree = "<group>"; };
+		B2024392217A55C9007E8A89 /* SchoolDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailsViewController.swift; sourceTree = "<group>"; };
+		B27447B0218042F000FB9E2E /* Networking_ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Networking_ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B27447B2218042F000FB9E2E /* Networking_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking_ExampleTests.swift; sourceTree = "<group>"; };
+		B27447B4218042F000FB9E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2BDB9B6215E87270010EEAD /* Networking_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Networking_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BDB9B9215E87270010EEAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2BDB9BB215E87270010EEAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +47,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B27447AD218042F000FB9E2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2BDB9B3215E87270010EEAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +64,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B27447B1218042F000FB9E2E /* Networking_ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				B27447B2218042F000FB9E2E /* Networking_ExampleTests.swift */,
+				B27447B4218042F000FB9E2E /* Info.plist */,
+			);
+			path = Networking_ExampleTests;
+			sourceTree = "<group>";
+		};
 		B2BDB9AD215E87270010EEAD = {
 			isa = PBXGroup;
 			children = (
 				B2BDB9B8215E87270010EEAD /* Networking_Example */,
+				B27447B1218042F000FB9E2E /* Networking_ExampleTests */,
 				B2BDB9B7215E87270010EEAD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				B2BDB9B6215E87270010EEAD /* Networking_Example.app */,
+				B27447B0218042F000FB9E2E /* Networking_ExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,9 +95,10 @@
 			isa = PBXGroup;
 			children = (
 				B2BDB9C5215E87280010EEAD /* Info.plist */,
+				B2BDB9B9215E87270010EEAD /* AppDelegate.swift */,
+				B2BDB9CF215F18B10010EEAD /* Model */,
 				B2BDB9D1215F190C0010EEAD /* ViewController */,
 				B2BDB9D0215F18E00010EEAD /* View */,
-				B2BDB9CF215F18B10010EEAD /* Model */,
 			);
 			path = Networking_Example;
 			sourceTree = "<group>";
@@ -70,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				B2BDB9CB215E88330010EEAD /* SchoolData.swift */,
+				B202438E21798ED5007E8A89 /* SATResultData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -87,8 +125,8 @@
 		B2BDB9D1215F190C0010EEAD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B2BDB9B9215E87270010EEAD /* AppDelegate.swift */,
 				B2BDB9BB215E87270010EEAD /* ViewController.swift */,
+				B2024392217A55C9007E8A89 /* SchoolDetailsViewController.swift */,
 				B2BDB9CD215E8B8E0010EEAD /* SchoolDataTableViewCell.swift */,
 			);
 			path = ViewController;
@@ -97,6 +135,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B27447AF218042F000FB9E2E /* Networking_ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B27447B7218042F100FB9E2E /* Build configuration list for PBXNativeTarget "Networking_ExampleTests" */;
+			buildPhases = (
+				B27447AC218042F000FB9E2E /* Sources */,
+				B27447AD218042F000FB9E2E /* Frameworks */,
+				B27447AE218042F000FB9E2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B27447B6218042F000FB9E2E /* PBXTargetDependency */,
+			);
+			name = Networking_ExampleTests;
+			productName = Networking_ExampleTests;
+			productReference = B27447B0218042F000FB9E2E /* Networking_ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B2BDB9B5215E87270010EEAD /* Networking_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2BDB9C8215E87280010EEAD /* Build configuration list for PBXNativeTarget "Networking_Example" */;
@@ -124,6 +180,11 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = parth;
 				TargetAttributes = {
+					B27447AF218042F000FB9E2E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B2BDB9B5215E87270010EEAD;
+					};
 					B2BDB9B5215E87270010EEAD = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -144,11 +205,19 @@
 			projectRoot = "";
 			targets = (
 				B2BDB9B5215E87270010EEAD /* Networking_Example */,
+				B27447AF218042F000FB9E2E /* Networking_ExampleTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B27447AE218042F000FB9E2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2BDB9B4215E87270010EEAD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,18 +231,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B27447AC218042F000FB9E2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B27447B3218042F000FB9E2E /* Networking_ExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2BDB9B2215E87270010EEAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B2BDB9BC215E87270010EEAD /* ViewController.swift in Sources */,
+				B2024393217A55C9007E8A89 /* SchoolDetailsViewController.swift in Sources */,
 				B2BDB9CE215E8B8E0010EEAD /* SchoolDataTableViewCell.swift in Sources */,
+				B202438F21798ED5007E8A89 /* SATResultData.swift in Sources */,
 				B2BDB9CC215E88340010EEAD /* SchoolData.swift in Sources */,
 				B2BDB9BA215E87270010EEAD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B27447B6218042F000FB9E2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2BDB9B5215E87270010EEAD /* Networking_Example */;
+			targetProxy = B27447B5218042F000FB9E2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B2BDB9BD215E87270010EEAD /* Main.storyboard */ = {
@@ -195,6 +282,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B27447B8218042F100FB9E2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6ZD8EJ8763;
+				INFOPLIST_FILE = Networking_ExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.parth.Networking-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Networking_Example.app/Networking_Example";
+			};
+			name = Debug;
+		};
+		B27447B9218042F100FB9E2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6ZD8EJ8763;
+				INFOPLIST_FILE = Networking_ExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.parth.Networking-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Networking_Example.app/Networking_Example";
+			};
+			name = Release;
+		};
 		B2BDB9C6215E87280010EEAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -335,6 +454,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B27447B7218042F100FB9E2E /* Build configuration list for PBXNativeTarget "Networking_ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B27447B8218042F100FB9E2E /* Debug */,
+				B27447B9218042F100FB9E2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B2BDB9B1215E87270010EEAD /* Build configuration list for PBXProject "Networking_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
