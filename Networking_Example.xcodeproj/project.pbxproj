@@ -10,6 +10,9 @@
 		B202438F21798ED5007E8A89 /* SATResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B202438E21798ED5007E8A89 /* SATResultData.swift */; };
 		B2024393217A55C9007E8A89 /* SchoolDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024392217A55C9007E8A89 /* SchoolDetailsViewController.swift */; };
 		B27447B3218042F000FB9E2E /* Networking_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27447B2218042F000FB9E2E /* Networking_ExampleTests.swift */; };
+		B27447BB21815DF800FB9E2E /* FavoriteSchoolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27447BA21815DF800FB9E2E /* FavoriteSchoolsViewController.swift */; };
+		B27447BD218184F900FB9E2E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27447BC218184F900FB9E2E /* MapViewController.swift */; };
+		B27447BF2181917C00FB9E2E /* SchoolMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27447BE2181917C00FB9E2E /* SchoolMap.swift */; };
 		B2BDB9BA215E87270010EEAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BDB9B9215E87270010EEAD /* AppDelegate.swift */; };
 		B2BDB9BC215E87270010EEAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BDB9BB215E87270010EEAD /* ViewController.swift */; };
 		B2BDB9BF215E87270010EEAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BDB9BD215E87270010EEAD /* Main.storyboard */; };
@@ -35,6 +38,9 @@
 		B27447B0218042F000FB9E2E /* Networking_ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Networking_ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27447B2218042F000FB9E2E /* Networking_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking_ExampleTests.swift; sourceTree = "<group>"; };
 		B27447B4218042F000FB9E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B27447BA21815DF800FB9E2E /* FavoriteSchoolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSchoolsViewController.swift; sourceTree = "<group>"; };
+		B27447BC218184F900FB9E2E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B27447BE2181917C00FB9E2E /* SchoolMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMap.swift; sourceTree = "<group>"; };
 		B2BDB9B6215E87270010EEAD /* Networking_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Networking_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BDB9B9215E87270010EEAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2BDB9BB215E87270010EEAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 			children = (
 				B2BDB9CB215E88330010EEAD /* SchoolData.swift */,
 				B202438E21798ED5007E8A89 /* SATResultData.swift */,
+				B27447BE2181917C00FB9E2E /* SchoolMap.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,6 +135,8 @@
 				B2BDB9BB215E87270010EEAD /* ViewController.swift */,
 				B2024392217A55C9007E8A89 /* SchoolDetailsViewController.swift */,
 				B2BDB9CD215E8B8E0010EEAD /* SchoolDataTableViewCell.swift */,
+				B27447BA21815DF800FB9E2E /* FavoriteSchoolsViewController.swift */,
+				B27447BC218184F900FB9E2E /* MapViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -246,9 +255,12 @@
 				B2BDB9BC215E87270010EEAD /* ViewController.swift in Sources */,
 				B2024393217A55C9007E8A89 /* SchoolDetailsViewController.swift in Sources */,
 				B2BDB9CE215E8B8E0010EEAD /* SchoolDataTableViewCell.swift in Sources */,
+				B27447BB21815DF800FB9E2E /* FavoriteSchoolsViewController.swift in Sources */,
 				B202438F21798ED5007E8A89 /* SATResultData.swift in Sources */,
 				B2BDB9CC215E88340010EEAD /* SchoolData.swift in Sources */,
 				B2BDB9BA215E87270010EEAD /* AppDelegate.swift in Sources */,
+				B27447BF2181917C00FB9E2E /* SchoolMap.swift in Sources */,
+				B27447BD218184F900FB9E2E /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +440,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6ZD8EJ8763;
 				INFOPLIST_FILE = Networking_Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.parth.Networking-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,6 +456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6ZD8EJ8763;
 				INFOPLIST_FILE = Networking_Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.parth.Networking-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";

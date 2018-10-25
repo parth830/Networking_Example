@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         getSchoolsData()
         setupNavBar()
         setupSearchBar()
+        schoolTableView.tableFooterView = UIView()
     }
 
     func getSchoolsData() {
@@ -106,6 +107,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         }
         schoolDetail.detailDBN = school.dbn
         schoolDetail.detailSchoolName = school.school_name
+        schoolDetail.phoneNumber = school.phone_number
+        schoolDetail.emailId = school.school_email ?? String()
+        schoolDetail.schoolLocation = school.location
+        schoolDetail.latitude = school.latitude ?? String()
+        schoolDetail.longitude = school.longitude ?? String()
         self.navigationController?.pushViewController(schoolDetail, animated: true)
     }
     
