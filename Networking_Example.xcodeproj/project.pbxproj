@@ -13,6 +13,8 @@
 		B27447BB21815DF800FB9E2E /* FavoriteSchoolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27447BA21815DF800FB9E2E /* FavoriteSchoolsViewController.swift */; };
 		B27447BD218184F900FB9E2E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27447BC218184F900FB9E2E /* MapViewController.swift */; };
 		B27447BF2181917C00FB9E2E /* SchoolMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27447BE2181917C00FB9E2E /* SchoolMap.swift */; };
+		B284C74721824FC50035CD3C /* WebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B284C74621824FC50035CD3C /* WebsiteViewController.swift */; };
+		B284C74A2183D4CF0035CD3C /* Networking_Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B284C7482183D4CF0035CD3C /* Networking_Example.xcdatamodeld */; };
 		B2BDB9BA215E87270010EEAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BDB9B9215E87270010EEAD /* AppDelegate.swift */; };
 		B2BDB9BC215E87270010EEAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BDB9BB215E87270010EEAD /* ViewController.swift */; };
 		B2BDB9BF215E87270010EEAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BDB9BD215E87270010EEAD /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 		B27447BA21815DF800FB9E2E /* FavoriteSchoolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSchoolsViewController.swift; sourceTree = "<group>"; };
 		B27447BC218184F900FB9E2E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B27447BE2181917C00FB9E2E /* SchoolMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMap.swift; sourceTree = "<group>"; };
+		B284C74621824FC50035CD3C /* WebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteViewController.swift; sourceTree = "<group>"; };
+		B284C7492183D4CF0035CD3C /* Networking_Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Networking_Example.xcdatamodel; sourceTree = "<group>"; };
 		B2BDB9B6215E87270010EEAD /* Networking_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Networking_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BDB9B9215E87270010EEAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2BDB9BB215E87270010EEAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 		B2BDB9B8215E87270010EEAD /* Networking_Example */ = {
 			isa = PBXGroup;
 			children = (
+				B284C7482183D4CF0035CD3C /* Networking_Example.xcdatamodeld */,
 				B2BDB9C5215E87280010EEAD /* Info.plist */,
 				B2BDB9B9215E87270010EEAD /* AppDelegate.swift */,
 				B2BDB9CF215F18B10010EEAD /* Model */,
@@ -134,9 +139,10 @@
 			children = (
 				B2BDB9BB215E87270010EEAD /* ViewController.swift */,
 				B2024392217A55C9007E8A89 /* SchoolDetailsViewController.swift */,
-				B2BDB9CD215E8B8E0010EEAD /* SchoolDataTableViewCell.swift */,
 				B27447BA21815DF800FB9E2E /* FavoriteSchoolsViewController.swift */,
 				B27447BC218184F900FB9E2E /* MapViewController.swift */,
+				B284C74621824FC50035CD3C /* WebsiteViewController.swift */,
+				B2BDB9CD215E8B8E0010EEAD /* SchoolDataTableViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -252,11 +258,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B284C74721824FC50035CD3C /* WebsiteViewController.swift in Sources */,
 				B2BDB9BC215E87270010EEAD /* ViewController.swift in Sources */,
 				B2024393217A55C9007E8A89 /* SchoolDetailsViewController.swift in Sources */,
 				B2BDB9CE215E8B8E0010EEAD /* SchoolDataTableViewCell.swift in Sources */,
 				B27447BB21815DF800FB9E2E /* FavoriteSchoolsViewController.swift in Sources */,
 				B202438F21798ED5007E8A89 /* SATResultData.swift in Sources */,
+				B284C74A2183D4CF0035CD3C /* Networking_Example.xcdatamodeld in Sources */,
 				B2BDB9CC215E88340010EEAD /* SchoolData.swift in Sources */,
 				B2BDB9BA215E87270010EEAD /* AppDelegate.swift in Sources */,
 				B27447BF2181917C00FB9E2E /* SchoolMap.swift in Sources */,
@@ -496,6 +504,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B284C7482183D4CF0035CD3C /* Networking_Example.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B284C7492183D4CF0035CD3C /* Networking_Example.xcdatamodel */,
+			);
+			currentVersion = B284C7492183D4CF0035CD3C /* Networking_Example.xcdatamodel */;
+			path = Networking_Example.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B2BDB9AE215E87270010EEAD /* Project object */;
 }

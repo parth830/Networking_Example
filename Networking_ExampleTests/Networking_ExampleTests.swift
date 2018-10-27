@@ -23,11 +23,11 @@ class Networking_ExampleTests: XCTestCase {
         super.tearDown()
     }
     
-    func testCallToiTunesCompletes() {
+    func testNetworkCallCompletes() {
 
         let url = URL(string: "https://data.cityofnewyork.us/resource/97mf-9njv.json")
 
-        let promise = expectation(description: "Completion handler invoked")
+        let target = expectation(description: "Completion handler invoked")
         var statusCode: Int?
         var responseError: Error?
         
@@ -35,7 +35,7 @@ class Networking_ExampleTests: XCTestCase {
             statusCode = (response as? HTTPURLResponse)?.statusCode
             responseError = error
 
-            promise.fulfill()
+            target.fulfill()
         }
         dataTask.resume()
         waitForExpectations(timeout: 5, handler: nil)

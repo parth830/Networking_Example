@@ -17,8 +17,5 @@ struct schoolDataStruct: Decodable{
     let location: String
     let latitude: String?
     let longitude: String?
-    
-//    let primary_address_line_1: String
-//    let state_code: String
-//    let zip: String
+    let website: String
 }

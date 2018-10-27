@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var schoolTableView: UITableView!
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     
     var schoolsData = [schoolDataStruct]()
     var filterSchoolsData = [schoolDataStruct]()
@@ -24,6 +25,12 @@ class ViewController: UIViewController {
         setupNavBar()
         setupSearchBar()
         schoolTableView.tableFooterView = UIView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        favoriteButton.isEnabled = false
+        favoriteButton.isEnabled = true
     }
 
     func getSchoolsData() {
@@ -112,6 +119,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         schoolDetail.schoolLocation = school.location
         schoolDetail.latitude = school.latitude ?? String()
         schoolDetail.longitude = school.longitude ?? String()
+        schoolDetail.schoolWebsite = school.website
         self.navigationController?.pushViewController(schoolDetail, animated: true)
     }
     

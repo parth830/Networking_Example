@@ -8,13 +8,15 @@
 
 import UIKit
 import MessageUI
+import CoreData
 
 class SchoolDetailsViewController: UIViewController {
 
     @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     var SATResults = [SATResultDataStruct]()
-
+    
     let SATResultURL: String = "https://data.cityofnewyork.us/resource/734v-jeq5.json"
     var detailDBN = String()
     var detailSchoolName = String()
@@ -23,6 +25,7 @@ class SchoolDetailsViewController: UIViewController {
     var schoolLocation = String()
     var latitude = String()
     var longitude = String()
+    var schoolWebsite = String()
 
     @IBOutlet weak var schoolNameLabel: UILabel!
     @IBOutlet weak var numOfSATTakersLabel: UILabel!
@@ -39,16 +42,33 @@ class SchoolDetailsViewController: UIViewController {
         getSATResultData()
         setupAddressLabel()
         setupEmailButton()
+        setupFavoriteButton()
     }
     
     func setupEmailButton() {
         if emailId.isEmpty {
             emailButton.isEnabled = false
         }
-        if !MFMailComposeViewController.canSendMail() {
-            print("Mail services are not available")
-            return
+    }
+    
+    //MARK: - Check school is in favorite list or not and change button setup
+    func setupFavoriteButton() {
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FavoriteSchool")
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        fetchRequest.predicate = NSPredicate.init(format: "schoolDbn = %@", detailDBN)
+        fetchRequest.fetchLimit = 1
+        let result = try! managedContext.fetch(fetchRequest)
+        if result.count == 0 {
+            favoriteButton.isEnabled = true
+        } else {
+            favoriteButton.isEnabled = false
         }
+        
     }
     
     func setupSchoolNameLabel() {
@@ -57,6 +77,7 @@ class SchoolDetailsViewController: UIViewController {
         self.schoolNameLabel.text = self.detailSchoolName
     }
     
+    // MARK: - Remove Extra details from school address.
     func setupAddressLabel() {
         if let location = schoolLocation.range(of: "(") {
             schoolLocation.removeSubrange(location.lowerBound..<schoolLocation.endIndex)
@@ -78,9 +99,7 @@ class SchoolDetailsViewController: UIViewController {
                                 self.SATWritingScoreLabel.text = "Writing: \(result.sat_writing_avg_score ?? "Result not found" )"
                             }
                         }
-                        
                     }
-                    
                 }
             } catch {
                 print("Error in getting data from server.")
@@ -99,11 +118,14 @@ class SchoolDetailsViewController: UIViewController {
             UIApplication.shared.openURL(number)
         }
         print("Dailing a number")
-
     }
     
     //MARK: - Email Button Tapped
     @IBAction func EmailTapped(_ sender: UIButton) {
+        if !MFMailComposeViewController.canSendMail() {
+            print("Mail services are not available")
+            return
+        }
         let mailVC = MFMailComposeViewController()
         mailVC.mailComposeDelegate = self
        
@@ -115,13 +137,42 @@ class SchoolDetailsViewController: UIViewController {
         
     }
     
-    // MARK: - Show School Map View Controller
+    // MARK: - Favorite Button Tapped
+    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "FavoriteSchool", in: managedContext)!
+        
+        let school = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        school.setValue(detailSchoolName, forKeyPath: "schoolName")
+        school.setValue(detailDBN, forKey: "schoolDbn")
+        
+        do {
+            try managedContext.save()
+            favoriteButton.isEnabled = false
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? MapViewController {
-            destinationVC.schoolAddress = schoolLocation
-            destinationVC.schoolName = detailSchoolName
-            destinationVC.latitude = latitude
-            destinationVC.longitude = longitude
+        
+        // MARK: - Show School Map View Controller
+        if let destinationMapVC = segue.destination as? MapViewController {
+            destinationMapVC.schoolAddress = schoolLocation
+            destinationMapVC.schoolName = detailSchoolName
+            destinationMapVC.latitude = latitude
+            destinationMapVC.longitude = longitude
+        }
+        
+        // MARK: - Show School Website View Controller
+        if let destinationWebVC = segue.destination as? WebsiteViewController {
+            destinationWebVC.website = schoolWebsite
+            
         }
     }
 }
