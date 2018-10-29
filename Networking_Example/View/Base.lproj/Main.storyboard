@@ -38,7 +38,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ve-Pe-Q96">
                                                     <rect key="frame" x="14" y="11" width="347" height="29"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="21"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14901960780000001" green="0.65098039220000004" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhF-sL-bAL">
@@ -79,8 +79,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Newyork Schools" id="LyW-PX-WGd">
+                        <barButtonItem key="backBarButtonItem" title="Schools" id="ol0-Wb-BZL"/>
                         <barButtonItem key="rightBarButtonItem" title="Favorite" id="cud-wA-hbB">
-                            <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.14901960780000001" green="0.65098039220000004" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="T1n-k2-hw1" kind="show" id="I9J-ZL-8CX"/>
                             </connections>
@@ -208,43 +209,62 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjd-Z5-ud8">
-                                <rect key="frame" x="116" y="661" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Email"/>
-                                <connections>
-                                    <action selector="EmailTapped:" destination="LSH-1D-0bR" eventType="touchUpInside" id="AiD-Za-b65"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BS4-SD-wcr">
-                                <rect key="frame" x="43" y="661" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Call"/>
-                                <connections>
-                                    <action selector="callTapped:" destination="LSH-1D-0bR" eventType="touchUpInside" id="tLX-ox-gj8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rT9-JK-Yaq">
-                                <rect key="frame" x="189" y="661" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Map"/>
-                                <connections>
-                                    <segue destination="xL0-6b-X7G" kind="show" id="cyK-Is-HKf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owc-kb-8mM">
-                                <rect key="frame" x="262" y="661" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Website"/>
-                                <connections>
-                                    <segue destination="K4a-zf-ZPX" kind="show" id="DGE-bv-Wig"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EN8-vp-Mm8">
-                                <rect key="frame" x="43" y="535" width="289" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="M9C-4c-y62">
+                                <rect key="frame" x="10" y="724" width="355" height="34"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BS4-SD-wcr">
+                                        <rect key="frame" x="0.0" y="0.0" width="82" height="34"/>
+                                        <color key="backgroundColor" red="0.14901960780000001" green="0.65098039220000004" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="Call">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="callTapped:" destination="LSH-1D-0bR" eventType="touchUpInside" id="tLX-ox-gj8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjd-Z5-ud8">
+                                        <rect key="frame" x="91" y="0.0" width="82" height="34"/>
+                                        <color key="backgroundColor" red="0.14901960780000001" green="0.65098039220000004" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="Email">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="EmailTapped:" destination="LSH-1D-0bR" eventType="touchUpInside" id="AiD-Za-b65"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rT9-JK-Yaq">
+                                        <rect key="frame" x="182" y="0.0" width="82" height="34"/>
+                                        <color key="backgroundColor" red="0.14901960780000001" green="0.65098039220000004" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="Map">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="xL0-6b-X7G" kind="show" id="cyK-Is-HKf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owc-kb-8mM">
+                                        <rect key="frame" x="273" y="0.0" width="82" height="34"/>
+                                        <color key="backgroundColor" red="0.14901960780000001" green="0.65098039220000004" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="Website">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="K4a-zf-ZPX" kind="show" id="DGE-bv-Wig"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EN8-vp-Mm8">
+                                <rect key="frame" x="10" y="666" width="355" height="38"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                <state key="normal" title="Favorite"/>
+                                <state key="normal" title="Favorite">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="favoriteButtonTapped:" destination="LSH-1D-0bR" eventType="touchUpInside" id="zOA-mV-8uH"/>
                                 </connections>
@@ -255,18 +275,24 @@
                             <constraint firstItem="QND-U1-hSy" firstAttribute="leading" secondItem="MMp-k4-ucK" secondAttribute="leading" constant="16" id="02L-3Z-0Aw"/>
                             <constraint firstItem="MMp-k4-ucK" firstAttribute="trailing" secondItem="Dfh-lk-Wnb" secondAttribute="trailing" constant="16" id="4pr-nm-5pj"/>
                             <constraint firstItem="MMp-k4-ucK" firstAttribute="trailing" secondItem="qni-mY-U6D" secondAttribute="trailing" constant="16" id="8WX-Fp-uTZ"/>
+                            <constraint firstItem="MMp-k4-ucK" firstAttribute="trailing" secondItem="EN8-vp-Mm8" secondAttribute="trailing" constant="10" id="8o7-8Y-NgJ"/>
                             <constraint firstItem="lnd-vI-SN3" firstAttribute="leading" secondItem="MMp-k4-ucK" secondAttribute="leading" constant="16" id="9Jo-lI-2oK"/>
                             <constraint firstItem="lnd-vI-SN3" firstAttribute="top" secondItem="qni-mY-U6D" secondAttribute="bottom" constant="8" id="AwY-Ht-TbF"/>
                             <constraint firstItem="MMp-k4-ucK" firstAttribute="trailing" secondItem="lnd-vI-SN3" secondAttribute="trailing" constant="16" id="MSY-j9-8hl"/>
                             <constraint firstItem="qni-mY-U6D" firstAttribute="leading" secondItem="MMp-k4-ucK" secondAttribute="leading" constant="16" id="TqE-5u-TQW"/>
                             <constraint firstItem="MMp-k4-ucK" firstAttribute="trailing" secondItem="Jt9-hg-b8r" secondAttribute="trailing" constant="16" id="WaH-8q-THo"/>
                             <constraint firstItem="Dfh-lk-Wnb" firstAttribute="top" secondItem="MMp-k4-ucK" secondAttribute="top" constant="107" id="aP0-tM-hY6"/>
+                            <constraint firstItem="MMp-k4-ucK" firstAttribute="trailing" secondItem="M9C-4c-y62" secondAttribute="trailing" constant="10" id="bfw-UA-xaP"/>
+                            <constraint firstItem="EN8-vp-Mm8" firstAttribute="leading" secondItem="MMp-k4-ucK" secondAttribute="leading" constant="10" id="cjb-gu-0XX"/>
                             <constraint firstItem="QND-U1-hSy" firstAttribute="top" secondItem="Jt9-hg-b8r" secondAttribute="bottom" constant="8" id="f06-LD-bPV"/>
+                            <constraint firstItem="M9C-4c-y62" firstAttribute="top" secondItem="EN8-vp-Mm8" secondAttribute="bottom" constant="20" id="gc8-b3-ODO"/>
                             <constraint firstItem="qni-mY-U6D" firstAttribute="top" secondItem="QND-U1-hSy" secondAttribute="bottom" constant="8" id="iLD-dv-akN"/>
                             <constraint firstItem="Dfh-lk-Wnb" firstAttribute="leading" secondItem="MMp-k4-ucK" secondAttribute="leading" constant="16" id="leh-vg-uoq"/>
                             <constraint firstItem="Jt9-hg-b8r" firstAttribute="leading" secondItem="MMp-k4-ucK" secondAttribute="leading" constant="16" id="n1S-lG-gqb"/>
                             <constraint firstItem="Jt9-hg-b8r" firstAttribute="top" secondItem="Dfh-lk-Wnb" secondAttribute="bottom" constant="8" id="nPW-8B-Ici"/>
                             <constraint firstItem="MMp-k4-ucK" firstAttribute="trailing" secondItem="QND-U1-hSy" secondAttribute="trailing" constant="16" id="rxl-Bb-KHh"/>
+                            <constraint firstItem="MMp-k4-ucK" firstAttribute="bottom" secondItem="M9C-4c-y62" secondAttribute="bottom" constant="20" id="taE-ua-fT5"/>
+                            <constraint firstItem="M9C-4c-y62" firstAttribute="leading" secondItem="MMp-k4-ucK" secondAttribute="leading" constant="10" id="x6i-4f-R8H"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MMp-k4-ucK"/>
                     </view>

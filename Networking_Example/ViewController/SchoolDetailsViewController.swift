@@ -64,8 +64,10 @@ class SchoolDetailsViewController: UIViewController {
         fetchRequest.fetchLimit = 1
         let result = try! managedContext.fetch(fetchRequest)
         if result.count == 0 {
+            favoriteButton.setTitle("Make it Favorite", for: .normal)
             favoriteButton.isEnabled = true
         } else {
+            favoriteButton.setTitle("Already in Favorite List", for: .disabled)
             favoriteButton.isEnabled = false
         }
         
@@ -153,6 +155,7 @@ class SchoolDetailsViewController: UIViewController {
         do {
             try managedContext.save()
             favoriteButton.isEnabled = false
+            favoriteButton.setTitle("Already in Favorite List", for: .disabled)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }

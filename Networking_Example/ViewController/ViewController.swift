@@ -133,7 +133,16 @@ extension ViewController: UISearchResultsUpdating {
     
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
+        
+        let wordCount = searchController.searchBar.text!.count
+        if wordCount > 2 {
         filterContentForSearchText(searchController.searchBar.text!)
+        }
+        else {
+            if !isFiltering() {
+                schoolTableView.reloadData()
+            }
+        }
     }
 }
 
