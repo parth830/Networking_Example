@@ -48,6 +48,7 @@ class SchoolDetailsViewController: UIViewController {
     func setupEmailButton() {
         if emailId.isEmpty {
             emailButton.isEnabled = false
+            emailButton.setTitle("No Email", for: .normal)
         }
     }
     
@@ -151,16 +152,21 @@ class SchoolDetailsViewController: UIViewController {
         
         school.setValue(detailSchoolName, forKeyPath: "schoolName")
         school.setValue(detailDBN, forKey: "schoolDbn")
+        school.setValue(phoneNumber, forKeyPath: "schoolPhone")
+        school.setValue(emailId, forKey: "schoolEmail")
+        school.setValue(schoolLocation, forKey: "schoolLocation")
+        school.setValue(latitude, forKey: "schoolLatitude")
+        school.setValue(longitude, forKey: "schoolLongitude")
+        school.setValue(schoolWebsite, forKey: "schoolWebsite")
         
         do {
             try managedContext.save()
             favoriteButton.isEnabled = false
-            favoriteButton.setTitle("Already in Favorite List", for: .disabled)
+            favoriteButton.setTitle("Added in Favorite List", for: .disabled)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -175,7 +181,6 @@ class SchoolDetailsViewController: UIViewController {
         // MARK: - Show School Website View Controller
         if let destinationWebVC = segue.destination as? WebsiteViewController {
             destinationWebVC.website = schoolWebsite
-            
         }
     }
 }

@@ -55,6 +55,23 @@ extension FavoriteSchoolsViewController: UITableViewDataSource, UITableViewDeleg
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let favSchoolDetail:SchoolDetailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "deailsVC") as! SchoolDetailsViewController
+       
+        let favSchool: NSManagedObject = favoriteSchool[indexPath.row]
+        
+        favSchoolDetail.detailDBN = (favSchool.value(forKeyPath: "schoolDbn") as? String) ?? ""
+        favSchoolDetail.detailSchoolName = (favSchool.value(forKeyPath: "schoolName") as? String) ?? ""
+        favSchoolDetail.phoneNumber = (favSchool.value(forKeyPath: "schoolPhone") as? String) ?? ""
+        favSchoolDetail.emailId = (favSchool.value(forKeyPath: "schoolEmail") as? String) ?? ""
+        favSchoolDetail.schoolLocation = (favSchool.value(forKeyPath: "schoolLocation") as? String) ?? ""
+        favSchoolDetail.latitude = (favSchool.value(forKeyPath: "schoolLatitude") as? String) ?? ""
+        favSchoolDetail.longitude = (favSchool.value(forKeyPath: "schoolLongitude") as? String) ?? ""
+        favSchoolDetail.schoolWebsite = (favSchool.value(forKeyPath: "schoolWebsite") as? String) ?? ""
+        
+        self.navigationController?.pushViewController(favSchoolDetail, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -68,8 +85,6 @@ extension FavoriteSchoolsViewController: UITableViewDataSource, UITableViewDeleg
             } catch let error as NSError {
                 print("Could not save. \(error), \(error.userInfo)")
             }
-            
-            // remove the deleted item from the `UITableView`
             favoriteSchoolsTableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
