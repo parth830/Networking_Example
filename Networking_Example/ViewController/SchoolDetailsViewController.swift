@@ -12,9 +12,16 @@ import CoreData
 
 class SchoolDetailsViewController: UIViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var schoolNameLabel: UILabel!
+    @IBOutlet weak var numOfSATTakersLabel: UILabel!
+    @IBOutlet weak var SATReadingScoreLabel: UILabel!
+    @IBOutlet weak var SATMathScoreLabel: UILabel!
+    @IBOutlet weak var SATWritingScoreLabel: UILabel!
     
+    // MARK: - Properties
     var SATResults = [SATResultDataStruct]()
     
     let SATResultURL: String = "https://data.cityofnewyork.us/resource/734v-jeq5.json"
@@ -26,13 +33,8 @@ class SchoolDetailsViewController: UIViewController {
     var latitude = String()
     var longitude = String()
     var schoolWebsite = String()
-
-    @IBOutlet weak var schoolNameLabel: UILabel!
-    @IBOutlet weak var numOfSATTakersLabel: UILabel!
-    @IBOutlet weak var SATReadingScoreLabel: UILabel!
-    @IBOutlet weak var SATMathScoreLabel: UILabel!
-    @IBOutlet weak var SATWritingScoreLabel: UILabel!
     
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.schoolNameLabel.text = self.detailSchoolName

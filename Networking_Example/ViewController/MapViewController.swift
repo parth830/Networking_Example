@@ -10,12 +10,11 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController {
-
-    let regionRadius: CLLocationDistance = 1000
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addressLabel: UILabel!
-    
+   
+    let regionRadius: CLLocationDistance = 1000
     var schoolAddress = String()
     var schoolName = String()
     var latitude = String()

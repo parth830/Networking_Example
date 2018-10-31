@@ -9,21 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var schoolTableView: UITableView!
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
     
+    // MARK: - Properties
     var schoolsData = [schoolDataStruct]()
     var filterSchoolsData = [schoolDataStruct]()
     let schoolDataURL: String = "https://data.cityofnewyork.us/resource/97mf-9njv.json"
     let searchController = UISearchController(searchResultsController: nil)
     
-    
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         getSchoolsData()
         setupNavBar()
         setupSearchBar()
+        setupScopeBar()
         schoolTableView.tableFooterView = UIView()
     }
     
@@ -33,6 +36,7 @@ class ViewController: UIViewController {
         favoriteButton.isEnabled = true
     }
 
+    // MARK: - Helper Methods
     func getSchoolsData() {
         guard let url = URL(string: schoolDataURL) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -51,32 +55,47 @@ class ViewController: UIViewController {
     
     // MARK: - Setup Large Text In Navigation
     func setupNavBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     // MARK: - Setup the Search Controller
     func setupSearchBar() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search School Name"
+        searchController.searchBar.placeholder = "Search School"
         navigationItem.searchController = searchController
         definesPresentationContext = true
         navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
+    // MARK: - Setup the Scope Bar
+    func setupScopeBar() {
+        searchController.searchBar.scopeButtonTitles = ["Name", "City"]
+        searchController.searchBar.delegate = self
+    }
+    
+    // MARK: - Filter Data
+    func filterContentForSearchText(_ searchText: String, scope: String = "Name") {
+        filterSchoolsData = schoolsData.filter({( school : schoolDataStruct) -> Bool in
+            if scope == "City" {
+                return school.city.lowercased().contains(searchText.lowercased())
+            }
+            return school.school_name.lowercased().contains(searchText.lowercased())
+        })
+        schoolTableView.reloadData()
     }
     
     func searchBarIsEmpty() -> Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
     
-    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filterSchoolsData = schoolsData.filter({( school : schoolDataStruct) -> Bool in
-            return school.school_name.lowercased().contains(searchText.lowercased())
-        })
-        schoolTableView.reloadData()
-    }
-    
     func isFiltering() -> Bool {
-        return searchController.isActive && !searchBarIsEmpty()
+        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
+        return searchController.isActive && (!searchBarIsEmpty() || searchBarScopeIsFiltering)
     }
 }
 
@@ -133,10 +152,11 @@ extension ViewController: UISearchResultsUpdating {
     
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
-        
-        let wordCount = searchController.searchBar.text!.count
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        let wordCount = searchBar.text!.count
         if wordCount > 2 {
-        filterContentForSearchText(searchController.searchBar.text!)
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
         }
         else {
             if !isFiltering() {
@@ -144,5 +164,13 @@ extension ViewController: UISearchResultsUpdating {
             }
         }
     }
+}
+
+// MARK: - UISearchbar Delegate for Scope bar
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+    }
+    
 }
 
